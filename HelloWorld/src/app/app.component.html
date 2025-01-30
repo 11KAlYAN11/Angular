@@ -227,6 +227,16 @@
       </svg>
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
+
+      <!-- app.component.html -->
+      <h1>{{ title }}</h1> <!-- Interpolation: Displays the value of 'title' -->
+      <p>Count: {{ count }}</p> <!-- Interpolation: Displays the value of 'count' -->
+
+      <!-- Property Binding -->
+      <img [src]="imageUrl" alt="Angular Logo" width="100">
+      <button [disabled]="isButtonDisabled">Click Me</button>
+
+
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

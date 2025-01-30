@@ -236,6 +236,11 @@
       <img [src]="imageUrl" alt="Angular Logo" width="100">
       <button [disabled]="isButtonDisabled">Click Me</button>
 
+      <!-- Event Binding -->
+      <button (click)="onButtonClick()">Click to Count</button>
+      <p>Button clicked {{ clickCount }} times.</p>
+
+      <input (input)="onInputChange($event)" placeholder="Type something">
 
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>

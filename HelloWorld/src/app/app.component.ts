@@ -17,4 +17,19 @@ export class AppComponent {
 
   // Two-Way Binding
   username = '';
+
+   // Event Binding
+   clickCount = 0;
+
+   // Method for Event Binding
+  onButtonClick() {
+    this.clickCount++;
+    console.log('Button clicked! Count:', this.clickCount);
+  }
+
+  // Method for Event Binding with Input
+  onInputChange(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    console.log('Input changed:', inputElement.value);
+  }
 }

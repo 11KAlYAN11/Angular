@@ -1,58 +1,21 @@
-<!-- Interpolation Examples -->
-<h1>{{ title }}</h1> <!-- Displays the value of the 'title' property -->
-<p>{{ subtitle }}</p> <!-- Displays the value of the 'subtitle' property -->
+<!-- Interpolation -->
+<h1>{{ title }}</h1>
+<p>{{ subtitle }}</p>
 
-<hr />
-
-<!-- Two-way Data Binding Examples -->
-<h2>Two-way Data Binding</h2>
-<!-- Example 1: Binding input to 'userInput' and displaying it dynamically -->
+<!-- Two-way Data Binding -->
 <label for="userInput">Enter something:</label>
 <input id="userInput" [(ngModel)]="userInput" placeholder="Type here..." />
-<p>You typed: <strong>{{ userInput }}</strong></p> <!-- Displays the value of 'userInput' as you type -->
+<p>You typed: <strong>{{ userInput }}</strong></p>
 
-<!-- Example 2: Binding another input to 'additionalInput' -->
-<label for="additionalInput">Enter more:</label>
-<input id="additionalInput" [(ngModel)]="additionalInput" placeholder="Type more..." />
-<p>Additional input: <strong>{{ additionalInput }}</strong></p> <!-- Displays the value of 'additionalInput' as you type -->
+<input type="checkbox" [(ngModel)]="isChecked" />
+<p>Checkbox is {{ isChecked ? 'checked' : 'unchecked' }}</p>
 
-<hr />
+<!-- Property Binding -->
+<img [src]="imageUrl" alt="Angular Logo" width="100" />
 
-<!-- Property Binding Examples -->
-<h2>Property Binding</h2>
-<!-- Example 1: Binding an image URL to the 'src' attribute -->
-<img [src]="imageUrl" alt="Angular Logo" width="100" /> <!-- Binds 'imageUrl' to the 'src' attribute -->
+<button [disabled]="userInput.length === 0">Submit</button>
 
-<!-- Example 2: Binding button text dynamically -->
-<button [disabled]="userInput === ''">{{ buttonText }}</button> <!-- Disables the button if 'userInput' is empty -->
+<!-- Event Binding -->
+<button (click)="onButtonClick()">Click Me!</button>
 
-<hr />
-
-<!-- Event Binding Examples -->
-<h2>Event Binding</h2>
-<!-- Example 1: Calling a method when the button is clicked -->
-<button (click)="onButtonClick()">Click Me!</button> <!-- Calls 'onButtonClick()' when clicked -->
-
-<!-- Example 2: Calling another method for a different button -->
-<button (click)="onAdditionalButtonClick()">Additional Button</button> <!-- Calls 'onAdditionalButtonClick()' when clicked -->
-
-<hr />
-
-<!-- Class Binding Examples -->
-<h2>Class Binding</h2>
-<!-- Example 1: Dynamically applying a CSS class -->
-<p [class.special]="isSpecial">This text is special!</p> <!-- Applies the 'special' class if 'isSpecial' is true -->
-
-<!-- Example 2: Toggling a class based on user input -->
-<p [class.highlight]="userInput.length > 0">This text is highlighted if you type something above.</p>
-
-<hr />
-
-<!-- Style Binding Examples -->
-<h2>Style Binding</h2>
-<!-- Example 1: Dynamically applying inline styles -->
-<p [style.color]="textColor">This text is blue.</p> <!-- Applies the 'color' style dynamically -->
-
-<!-- Example 2: Changing font size based on user input -->
-<p [style.font-size.px]="fontSize">This text has a font size of 20px.</p>
-<p [style.font-size.px]="userInput.length + 10">Font size changes based on input length: {{ userInput.length + 10 }}px</p>
+<input (input)="onInputChange($event)" placeholder="Type something..." />

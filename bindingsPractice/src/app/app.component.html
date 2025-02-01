@@ -1,0 +1,19 @@
+<!-- Welcome to body from index.html -->
+ <hr>
+ <!-- Interpolation example component to UI-->
+ <h1>{{name}}</h1>
+
+ <hr>
+ <!-- Property Binding Component to UI -->
+<div>
+<img [src]="imageUrl" alt="Basic Image of colors" width="300" height="200"/>
+</div>
+<hr>
+
+<!-- Event Binding UI to Component -->
+<button (click)="onButtonClick()">Click Here for Event Binding</button> <!-- Dont firget to add like a function call for Event binding -->
+
+<hr>
+<!-- 2 way data binding UI <-> Component -->
+<input [(ngModel)]="description" placeholder="Type to to render the content"/>
+<p style="border: 0cqb; font-style: italic; color: rgb(218, 14, 188);"> You Typed: <strong>{{description}}</strong></p>

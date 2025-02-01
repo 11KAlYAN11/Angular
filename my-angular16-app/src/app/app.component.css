@@ -1,0 +1,9 @@
+/* CSS for class and style bindings */
+.special {
+    font-weight: bold;
+    color: green;
+  }
+  
+  .highlight {
+    background-color: yellow;
+  }

@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { ChildComponent } from './child/child.component'; // Import the child component
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChildComponent // Declare the child component
   ],
   imports: [
     BrowserModule,
-    FormsModule // Add FormsModule to imports
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ChildComponent] // Bootstrap the child component directly
 })
 export class AppModule { }

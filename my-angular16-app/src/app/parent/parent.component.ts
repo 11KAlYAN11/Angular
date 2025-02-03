@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ParentComponent {
   parentMessage: string = 'Hello from Parent Component!';
+  messageFromChild: string = '';
+
+  receiveMessage(message: string) {
+    console.log('received Message called with message:', message);
+    this.messageFromChild = message;
+  }
 }

@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
-
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-child', // This same name we need to mention in index.html so that it will come to here directly & select respective files
+  selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent {
   title = 'Child Component';
   name: string = '';
+
+  @Input() parentData: string = ''; // Add this line to receive data from the parent
 }

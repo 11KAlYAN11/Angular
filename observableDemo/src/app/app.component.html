@@ -1,1 +1,16 @@
-<h1>Observable demo running..</h1>
+<h1>Observable demo running.. in console also</h1>
+<div>
+  <h2>{{title}}</h2>
+  <div *ngIf="observableData">
+    <h3>Data from Observable: </h3>
+    <p>{{observableData}}</p>
+  </div>
+  <div *ngIf="observableError">
+    <h3>Error from Observable: </h3>
+    <p>{{observableError}}</p>
+  </div>
+  <div *ngIf="observableStatus">
+    <h3>Status from Observable: </h3>
+    <p>{{observableStatus}}</p>
+  </div>
+</div>

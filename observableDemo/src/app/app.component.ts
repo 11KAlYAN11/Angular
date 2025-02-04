@@ -7,7 +7,10 @@ import { Observable, Subscriber } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'observableDemo';
+  title = 'ObservableDemo';
+  observableData: string = '';
+  observableError: string = '';
+  observableStatus: string = '';
 
   constructor() {
     // Create an observable that emits data
@@ -41,13 +44,18 @@ export class AppComponent {
 
     // Subscribe to the first observable and handle the emitted messages
     observable.subscribe({
-      next: (data) => console.log(data),
+      next: (data) => {
+        this.observableData += data; //cuz: chucks of data adding again & again     To display in HTMl page
+        console.log(data);
+      },
       error: (err) => {
         // Handle the error emitted from observable
+        this.observableError = err; // To display in HTMl page
         console.error('Error from observable:', err);
       },
       complete: () => {
         // Notify when the observable completes normally
+        this.observableStatus = "Observable completed";
         console.log('Observable completed');
       }
     });

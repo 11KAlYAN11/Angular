@@ -1,1 +1,16 @@
 <h1>Promises demo running check console. </h1>
+<div>
+  <h1>{{title}}</h1>
+  <div *ngIf="promiseData">
+    <h3>Data from Promises: </h3>
+    <p>{{promiseData}}</p>
+  </div>
+  <div *ngIf="promiseError">
+    <h3>Error from Promises: </h3>
+    <p>{{promiseError}}</p>
+  </div>
+  <div *ngIf="promiseStatus">
+    <h3>Status from Promises: </h3>
+    <p>{{promiseStatus}}</p>
+  </div>
+</div>

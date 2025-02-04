@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, Subscriber } from 'rxjs';
+// src github & one note
 
 @Component({
   selector: 'app-root',
@@ -73,4 +74,61 @@ export class AppComponent {
       }
     });
   }
+  /*
+  Understanding Observables and Promises in Angular
+1st Half: Observables
+What is an Observable?
+	• An Observable is a powerful way to handle asynchronous data streams in Angular.
+	• It allows data to be emitted over time, making it useful for handling events, API calls, and real-time updates.
+	• Observables are provided by RxJS (Reactive Extensions for JavaScript), which Angular uses extensively.
+Key Features of Observables:
+✅ Supports multiple values over time (continuous data flow).
+✅ Works asynchronously, making it useful for handling real-time data streams.
+✅ Provides operators like map(), filter(), and debounceTime() for transforming data efficiently.
+✅ Can be canceled (unsubscribed) when not needed, preventing memory leaks.
+✅ Handles errors using .error() and completion using .complete().
+Observable Lifecycle:
+	1. Creation: We create an observable that emits values using the new Observable() constructor.
+	2. Subscription: We subscribe to it to receive and handle emitted values.
+	3. Emitting Data: The observable sends values using next().
+	4. Handling Errors: If an error occurs, the observable calls error().
+	5. Completion: When all data is emitted, the observable calls complete().
+Basic Example of an Observable
+
+typescript
+CopyEdit
+const myObservable = new Observable<string>((subscriber) => {
+  subscriber.next('First Value');
+  subscriber.next('Second Value');
+  setTimeout(() => {
+    subscriber.next('Third Value after delay');
+    subscriber.complete(); // No more data will be emitted after this
+  }, 2000);
+});
+Subscribing to an Observable
+
+typescript
+CopyEdit
+myObservable.subscribe({
+  next: (data) => console.log('Received:', data),
+  error: (err) => console.error('Error:', err),
+  complete: () => console.log('Observable Completed')
+});
+Error Handling in Observables
+
+typescript
+CopyEdit
+const errorObservable = new Observable<string>((subscriber) => {
+  subscriber.next('Everything is good!');
+  subscriber.error('Oops! Something went wrong.');
+});
+errorObservable.subscribe({
+  next: (data) => console.log('Received:', data),
+  error: (err) => console.error('Error:', err),
+  complete: () => console.log('Completed')
+});
+💡 Best Practice: Always unsubscribe when the observable is no longer needed to free up resources.
+
+
+  */
 }
